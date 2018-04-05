@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
    validates :name, presence: true
 
-   has_many :listings, dependent: :destroy #The listing is dependent upon the user that created it
+   has_many :listings, dependent: :destroy #The listing is dependent upon the user that created it, if the user is deleted the listing is deleted as well
 
 
 end
