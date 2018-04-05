@@ -4,6 +4,11 @@ class ListingsController < ApplicationController
   before_action :check_user, only: [:edit, :update, :destroy] #created method below
   # GET /listings
   # GET /listings.json
+
+  def seller
+    @listings = Listing.where(user: current_user)
+  end
+
   def index
     @listings = Listing.all
   end
